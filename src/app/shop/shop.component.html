@@ -1,0 +1,9 @@
+<p>
+  shop works!
+</p>
+  <ul>
+    <li *ngFor="let listing of (listings | async)">
+      <app-etsy-listing [listing]="listing"></app-etsy-listing>
+    </li>
+  </ul>
+
