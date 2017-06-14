@@ -8,7 +8,7 @@ import { Subject } from "rxjs/Subject";
 
 @Injectable()
 export class EtsyService {
-  getListingsUrl = 'https://openapi.etsy.com/v2/shops/6014762/listings/active.js';
+  getListingsUrl = 'https://openapi.etsy.com/v2/shops/'+ environment.shopId +'/listings/active.js';
   listings: Observable<EtsyListing[]>;
   private listingSubject: Subject<EtsyListing[]>;
   constructor( private http: Jsonp) {
