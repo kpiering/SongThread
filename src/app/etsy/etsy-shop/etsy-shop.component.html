@@ -1,0 +1,12 @@
+<p>
+  etsy-shop works!
+</p>
+
+
+<ng-container *ngIf="shop">
+  {{shop.shop_name}}
+</ng-container>
+<p>{{loaded$ | async}}</p>
+  <div *ngFor="let listing of (listings$ | async)">
+    <app-etsy-listing [listing]="listing"></app-etsy-listing>
+  </div>

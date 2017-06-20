@@ -1,12 +1,17 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
- <nav>
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/shop" routerLinkActive="active">Shop</a>
-  </nav>
+<div class = "content">
+  <div class = "header">
+    <div class = "headerImgContainer">
+      <img src="./assets/logoname.png" alt={{title}} />
+    </div>
+    <div class = "menu">
+      <nav>
+        <a routerLink="/" routerLinkActive="active">Home</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a routerLink="/shop" routerLinkActive="active">Shop</a>
+      </nav>
+    </div>
+  </div>
+
   <router-outlet></router-outlet>
 </div>
 

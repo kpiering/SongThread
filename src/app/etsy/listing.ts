@@ -49,7 +49,3 @@ export type EtsyListing = {
   taxonomy_path: string[],
   used_manufacturer: boolean,
 };
-
-/*
-
-*/

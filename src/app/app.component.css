@@ -1,1 +1,45 @@
 
+.content{
+    text-align:center;
+}
+
+.header{
+    background-color:pink;
+}
+
+.headerImgContainer{
+    
+    text-align:left;
+    width: 1000px;
+    background-color:white;
+    margin-left: auto;
+	margin-right: auto;    
+}
+
+.header nav{
+
+}
+
+.menu{
+
+    background-color:gray;
+    padding-top:15px;
+    padding-bottom:15px;
+    
+}
+
+.menu a{
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: Arial;
+    font-size: 20px;
+    text-decoration: none;
+    color:black;
+    padding:8px;
+    background-color:white;
+}
+
+.menu a:hover{
+    color:green;
+    text-decoration:underline;
+}

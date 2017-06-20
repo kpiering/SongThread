@@ -1,2 +1,9 @@
-<a [href]="listing.url">{{listing.title}}</a>
-<img [src]="listing.Images[0].url_75x75"/>
+<div class = "listing">
+    <div class = "title">
+        <a [href]="listing.url">{{listing.title}}</a>
+    </div>
+    <div class = "listingimg">
+        <a [href]="listing.url"><img [src]="listing.Images[imgIndex].url_170x135" (mouseover)="hoverOn()" (mouseout)="hoverOff()"/></a>
+    </div>
+    
+</div>
