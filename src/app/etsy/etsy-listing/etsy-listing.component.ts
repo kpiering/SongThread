@@ -34,7 +34,7 @@ export class EtsyListingComponent implements OnInit, OnDestroy {
 
   start() {
     this.clearTimer();
-    EtsyListingComponent.timerId = window.setInterval(() => { this.incrementImage(); }, 1000);
+    EtsyListingComponent.timerId = window.setInterval(() => { this.incrementImage(); }, 800);
   }
 
   stop() {

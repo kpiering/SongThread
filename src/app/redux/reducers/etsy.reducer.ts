@@ -1,18 +1,22 @@
 import { Action } from '@ngrx/store';
 import { EtsyListing } from '../../etsy/listing';
 import { EtsyActions, EtsyLoadCompletePayload } from "app/redux/actions/etsy.actions";
+import { EtsyShop } from "app/etsy/shop";
 
 export type LoadStatus = 'empty' | 'loading' | 'loaded';
 
 export interface EtsyState {
     loaded: LoadStatus;
     ids: number[];
+    shop: EtsyShop;
     [id: number]: EtsyListing;
+    
 }
 
 export const initial: EtsyState = {
     loaded: 'empty',
     ids: [],
+    shop: {},
 };
 
 export class EtsyReducer {
@@ -29,6 +33,11 @@ export class EtsyReducer {
                     ...state,
                     loaded: 'loaded',
                     ids: completePayload.listings.map((l: EtsyListing) => { return l.listing_id }),
+                    shop: {
+                        ...completePayload.shop,
+                        Listings: undefined,
+                        Sections: undefined,
+                    }
                 };
                 completePayload.listings.map((l: EtsyListing) => { next[l.listing_id] = l; })
                 return next;

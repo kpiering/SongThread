@@ -1,17 +1,26 @@
-<div class = "content">
-  <div class = "header">
-    <div class = "headerImgContainer">
-      <img src="./assets/logoname.png" alt={{title}} />
-    </div>
-    <div class = "menu">
-      <nav>
-        <a routerLink="/" routerLinkActive="active">Home</a>
-        <a routerLink="/about" routerLinkActive="active">About</a>
-        <a routerLink="/shop" routerLinkActive="active">Shop</a>
-      </nav>
-    </div>
-  </div>
 
+<div class = "menu">
+  <nav>
+    <div class = "menuSide">
+      <a routerLink="/" routerLinkActive="active">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/" routerLinkActive="active">Freebies</a>
+    </div>
+
+    <a routerLink="/" routerLinkActive="active" class = "logoImage"> <img src="./assets/_images/logo-teal.svg" /> </a>
+
+  <div class = "menuSide">
+    <a routerLink="/shop" routerLinkActive="active">Shop</a>
+    <a routerLink="/" routerLinkActive="active">Commissions</a>
+    <a routerLink="/" routerLinkActive="active">Links</a>
+  </div>
+  </nav>
+</div>
+
+
+<div class = "menuRibbon"><div class="arrow-right"></div><div class="arrow-left"></div><div class = "menuRibbonInner"></div></div>
+
+<div class = "content">
   <router-outlet></router-outlet>
 </div>
 

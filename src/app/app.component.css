@@ -1,45 +1,98 @@
-
-.content{
-    text-align:center;
-}
-
-.header{
-    background-color:pink;
-}
-
-.headerImgContainer{
-    
-    text-align:left;
-    width: 1000px;
-    background-color:white;
-    margin-left: auto;
-	margin-right: auto;    
-}
-
-.header nav{
-
-}
-
 .menu{
+    min-width: 960px;
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+    margin-bottom: 0px;
+    width:100%;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 24px;
+    background-image: url("/assets/_images/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center top; 
+}
 
-    background-color:gray;
-    padding-top:15px;
-    padding-bottom:15px;
+.menuSide{
+    display:inline-block;
+    vertical-align: middle;
     
+}
+
+nav{
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    display:inline-block;
 }
 
 .menu a{
-    margin-left: 50px;
-    margin-right: 50px;
-    font-family: Arial;
-    font-size: 20px;
     text-decoration: none;
-    color:black;
-    padding:8px;
-    background-color:white;
+    color:white;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .menu a:hover{
-    color:green;
-    text-decoration:underline;
+    text-decoration: underline;
 }
+
+.logoImage{
+    display:inline-block; 
+    vertical-align: middle;
+}
+
+.menuRibbon{
+    height:42px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    background-color:#064F63;
+    width:100%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: -189px;
+    margin-bottom: 146px;
+    min-width: 960px;
+}
+.menuRibbonInner{
+    height:40px;
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
+    background-color:#064F63;
+    width:100%;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+
+    border-left: 26px solid white;
+    float:left;
+    margin-top: -5px;
+}
+
+.arrow-left{
+    width: 0; 
+    height: 0; 
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent; 
+
+    border-right:26px solid white;
+    float:right;
+    margin-top: -5px;
+}
+
+.content{
+    min-width:960px;
+    max-width:1200px;
+    margin-left:auto;
+    margin-right: auto;
+    background-color:lightblue;
+    text-align: left;
+}
+
+

@@ -10,7 +10,8 @@ import { HomeComponent } from "app/home/home.component";
 import { ShopComponent } from "app/shop/shop.component";
 import { EtsyShopComponent } from './etsy/etsy-shop/etsy-shop.component';
 import { AboutComponent } from './about/about/about.component';
-import { ReduxModule } from './redux/redux.module'
+import { ReduxModule } from './redux/redux.module';
+import { EtsySectionComponent } from './etsy/etsy-section/etsy-section/etsy-section.component'
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     ShopComponent,
     EtsyShopComponent,
     AboutComponent,
+    EtsySectionComponent,
   ],
   imports: [
     BrowserModule,

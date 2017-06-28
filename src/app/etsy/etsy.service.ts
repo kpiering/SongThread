@@ -13,9 +13,9 @@ import { SyncStore } from "app/redux/selectors";
 
 @Injectable()
 export class EtsyService {
-  getListingsUrl = 'https://openapi.etsy.com/v2/shops/'+ environment.shopId+'/listings/active.js';
+ /* getListingsUrl = 'https://openapi.etsy.com/v2/shops/'+ environment.shopId+'/listings/active.js';
   listings: Observable<EtsyListing[]>;
-  private listingSubject: Subject<EtsyListing[]>;
+  private listingSubject: Subject<EtsyListing[]>;*/
 
   getShopUrl = 'http://cutekick.com/cache/etsy.json';
   shop: Observable<EtsyShop>;
@@ -25,14 +25,14 @@ export class EtsyService {
     private http: Http, 
     private store: Store<AppState>
     ) {
-    this.listingSubject = new Subject<EtsyListing[]>();
-    this.listings = this.listingSubject.asObservable();
+    /*this.listingSubject = new Subject<EtsyListing[]>();
+    this.listings = this.listingSubject.asObservable();*/
     
     this.shopSubject = new Subject<EtsyShop>();
     this.shop = this.shopSubject.asObservable();
   }
 
-  getListings() {
+ /* getListings() {
     console.log('get listings');
 
     const params: URLSearchParams = new URLSearchParams();
@@ -48,7 +48,7 @@ export class EtsyService {
       this.listingSubject.next(data.results);
       console.log(res.json());
     });
-  }
+  }*/
 
   getShop() {
     const state: AppState = SyncStore.getState(this.store);
@@ -56,9 +56,6 @@ export class EtsyService {
     if (state.etsy.loaded === 'empty') {
       console.log('get shop');
       const params: URLSearchParams = new URLSearchParams();
-      /*params.set('includes', 'Listings:active:100/Images');
-      params.set('api_key', environment.apiKey);
-      params.set('callback', 'JSONP_CALLBACK');*/
       this.store.dispatch(EtsyActions.loadBegin());
       const requestOptions: RequestOptions = new RequestOptions({
         search: params,
@@ -66,10 +63,38 @@ export class EtsyService {
       this.http.get(this.getShopUrl, requestOptions).subscribe((res) => {
         const data: any = res.json();
         this.shopSubject.next(data.results[0]);
-        console.log(res.json());
-        this.store.dispatch(EtsyActions.loadComplete(data.results[0]));
+
+        const sections = { ids: [] };
+        data.results[0].Sections.forEach(section => {
+          sections.ids.push(section.shop_section_id);
+          sections[section.shop_section_id] = {
+            ...section,
+            listingIds: [],
+            rowLimit: 4, //Change to constant or pull in from elsewhere
+          };
+        });
+
+        data.results[0].Listings.forEach(listing => {
+          sections[listing.shop_section_id].listingIds.push(listing.listing_id);
+        });
+        
+        //console.log(sections);
+        console.log(data.results[0]);
+        this.store.dispatch(EtsyActions.loadComplete(data.results[0], sections));
+        
       });
     }
   }
 
 }
+
+/*sections {
+  ids: [ 'section1']
+  section1: {..., listings[a, b, c]}
+  section2: [d, e, f]
+}
+listings {
+  ids: [a, b, c, d ,e f],
+  a: {},
+  b: {}
+}*/

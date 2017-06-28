@@ -1,0 +1,7 @@
+<h3>{{section.title}}</h3>
+
+<div *ngFor="let listingId of section.listingIds | slice:0:section.rowLimit">
+  <app-etsy-listing [listing]="(listingsHash$ | async)[listingId]"></app-etsy-listing>
+</div>
+
+<button (click)="showMore()" *ngIf="section.listingIds.length > section.rowLimit">Show More</button>

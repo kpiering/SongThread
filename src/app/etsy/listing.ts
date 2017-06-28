@@ -1,5 +1,7 @@
+import { EtsyImages } from "app/etsy/images";
+
 export type EtsyListing = {
-  Images: any[],
+  Images: EtsyImages[],
   listing_id: number,
   state: string,
   user_id: number,

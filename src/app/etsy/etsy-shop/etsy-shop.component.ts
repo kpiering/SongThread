@@ -6,6 +6,7 @@ import { EtsyListing } from "app/etsy/listing";
 import { etsy } from "app/redux/selectors";
 import { Observable } from "rxjs/Observable";
 import { LoadStatus } from "app/redux/reducers/etsy.reducer";
+import { EtsySection } from "app/etsy/section";
 
 @Component({
   selector: 'app-etsy-shop',
@@ -15,6 +16,7 @@ import { LoadStatus } from "app/redux/reducers/etsy.reducer";
 export class EtsyShopComponent implements OnInit {
   @Input() shop: EtsyShop;
   listings$: Observable<EtsyListing[]>;
+  sections$: Observable<EtsySection[]>;
   loaded$: Observable<LoadStatus>;
   constructor(
     private store: Store<AppState>,
@@ -27,6 +29,6 @@ export class EtsyShopComponent implements OnInit {
   selectFromStore() {
     this.listings$ = this.store.select<EtsyListing[]>(etsy.listings);
     this.loaded$ = this.store.select<LoadStatus>(etsy.loadStatus);
+    this.sections$ = this.store.select<EtsySection[]>(etsy.sections);
   }
-
 }
