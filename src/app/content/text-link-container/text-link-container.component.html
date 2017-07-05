@@ -1,0 +1,11 @@
+<div class = "textLinkContainer" [style.text-align] = "block.align" >
+  <ng-container [ngSwitch]="(currentLanguage$ | async)">
+    <ng-template ngSwitchCase="english">
+      <a [href] = "block.link_url" target = "blank"> {{block.english}} </a>
+    </ng-template>
+
+    <ng-template ngSwitchCase="dutch">
+      <a [href] = "block.link_url" target = "blank"> {{block.dutch}} </a>
+    </ng-template>
+  </ng-container>
+</div>

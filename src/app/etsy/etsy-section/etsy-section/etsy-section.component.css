@@ -1,3 +1,44 @@
 h3{
     text-align: center;
+    margin-bottom:20px;
+}
+
+.section{
+   
+    background:white;
+    width:100%;
+    margin-bottom:10px;
+    border-bottom: 1px #e3e3e3 solid;    
+    padding-bottom: 10px;
+}
+
+.listingsContainer{
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    text-align:center;
+}
+.buttonContainer{
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    text-align:center;
+}
+
+button{
+    background-color: #00659d;
+    color: white;
+    border: none;    
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin:auto;
+}
+
+button:focus {
+    outline:0;
 }

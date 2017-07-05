@@ -3,7 +3,7 @@ import { EtsyShop } from "app/etsy/shop";
 import { Store } from "@ngrx/store";
 import { AppState } from "app/redux/redux.module";
 import { EtsyListing } from "app/etsy/listing";
-import { etsy } from "app/redux/selectors";
+import { etsy, content } from "app/redux/selectors";
 import { Observable } from "rxjs/Observable";
 import { LoadStatus } from "app/redux/reducers/etsy.reducer";
 import { EtsySection } from "app/etsy/section";
@@ -18,6 +18,7 @@ export class EtsyShopComponent implements OnInit {
   listings$: Observable<EtsyListing[]>;
   sections$: Observable<EtsySection[]>;
   loaded$: Observable<LoadStatus>;
+  currentLanguage$ : Observable<string>;
   constructor(
     private store: Store<AppState>,
   ) { }
@@ -30,5 +31,6 @@ export class EtsyShopComponent implements OnInit {
     this.listings$ = this.store.select<EtsyListing[]>(etsy.listings);
     this.loaded$ = this.store.select<LoadStatus>(etsy.loadStatus);
     this.sections$ = this.store.select<EtsySection[]>(etsy.sections);
+    this.currentLanguage$  = this.store.select<string>(content.currentLanguage);
   }
 }

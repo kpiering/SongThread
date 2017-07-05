@@ -12,11 +12,27 @@ import { EtsyShopComponent } from './etsy/etsy-shop/etsy-shop.component';
 import { AboutComponent } from './about/about/about.component';
 import { ReduxModule } from './redux/redux.module';
 import { EtsySectionComponent } from './etsy/etsy-section/etsy-section/etsy-section.component'
+import { ContentService } from "app/content/content.service";
+import { ImageTextContainerComponent } from './content/image-text-container/image-text-container.component';
+import { TextContainerComponent } from './content/text-container/text-container.component';
+import { PageContentComponent } from './content/page-content/page-content.component';
+import { TextLinkContainerComponent } from './content/text-link-container/text-link-container.component';
+import { ImageTextLinkContainerComponent } from './content/image-text-link-container/image-text-link-container.component';
+import { ImageContainerComponent } from './content/image-container/image-container.component';
+import { HeaderContainerComponent } from './content/header-container/header-container.component';
+import { SubheaderContainerComponent } from './content/subheader-container/subheader-container.component';
+import { FreebiesComponent } from './freebies/freebies.component';
+import { CommissionsComponent } from './commissions/commissions.component';
+import { LinksComponent } from './links/links.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'shop', component: ShopComponent },
   { path: 'about', component:AboutComponent },
+  { path: 'freebies', component:FreebiesComponent },
+  { path: 'shop', component: ShopComponent },
+  { path: 'commissions', component:CommissionsComponent },
+  { path: 'links', component:LinksComponent },
+  
 ];
 
 @NgModule({
@@ -28,6 +44,17 @@ const appRoutes: Routes = [
     EtsyShopComponent,
     AboutComponent,
     EtsySectionComponent,
+    ImageTextContainerComponent,
+    TextContainerComponent,
+    PageContentComponent,
+    TextLinkContainerComponent,
+    ImageTextLinkContainerComponent,
+    ImageContainerComponent,
+    HeaderContainerComponent,
+    SubheaderContainerComponent,
+    FreebiesComponent,
+    CommissionsComponent,
+    LinksComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +64,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     EtsyService,
+    ContentService
   ],
   bootstrap: [AppComponent]
 })

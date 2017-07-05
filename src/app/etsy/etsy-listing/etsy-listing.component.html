@@ -1,9 +1,10 @@
-<div class = "listing">
-    <div class = "title">
-        <a [href]="listing.url">{{listing.title}}</a>
+ <a [href]="listing.url" target="_blank">
+    <div class = "listing">
+        <div class = "title">
+        {{listing.title}}
+        </div>
+        <div class = "listingimg">
+            <img [src]="listing.Images[imgIndex].url_170x135" (mouseover)="hoverOn()" (mouseout)="hoverOff()"/>
+        </div>
     </div>
-    <div class = "listingimg">
-        <a [href]="listing.url"><img [src]="listing.Images[imgIndex].url_170x135" (mouseover)="hoverOn()" (mouseout)="hoverOff()"/></a>
-    </div>
-    
-</div>
+</a>

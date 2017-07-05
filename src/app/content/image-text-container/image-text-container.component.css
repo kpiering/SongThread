@@ -1,0 +1,31 @@
+.imageTextContainer{
+    width:100%;
+    float:left;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+img{
+    float:left;
+    vertical-align: middle;   
+}
+
+.imageLeft{
+    float:left;
+    margin-right:20px; 
+}
+
+.imageRight{
+    float:right;
+    margin-left:20px;
+}
+
+img{
+    vertical-align: middle;  
+    border: 5px solid transparent;
+}
+
+a img:hover{
+    text-decoration: none;
+    border: 5px solid #00659d;
+}

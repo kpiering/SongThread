@@ -20,6 +20,9 @@ export class EtsyActions {
     static ETSY_LOAD_BEGIN = 'ETSY_LOAD_BEGIN';
     static ETSY_LOAD_COMPLETE = 'ETSY_LOAD_COMPLETE';
     static ETSY_SHOW_MORE = 'ETSY_SHOW_MORE';
+
+    static ETSY_COUNT_START = 6;
+    static ETSY_COUNT_INCREASE = 12;
     static loadBegin(): Action {
         return {
             type: EtsyActions.ETSY_LOAD_BEGIN,
@@ -42,7 +45,7 @@ export class EtsyActions {
     static showMore(section:EtsySection): Action {
         const payload: EtsySectionShowMorePayload = {
             id: section.shop_section_id,
-            newLimit: section.rowLimit + 4, //update here
+            newLimit: section.rowLimit + EtsyActions.ETSY_COUNT_INCREASE,
         };
 
         return {

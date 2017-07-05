@@ -1,0 +1,16 @@
+<ng-container [ngSwitch]="(currentLanguage$ | async)">
+  <ng-template ngSwitchCase="english">
+    <ng-container *ngFor="let text of block.english">
+      <div>
+        {{text}}
+      </div>
+    </ng-container>
+  </ng-template>
+  <ng-template ngSwitchCase="dutch">
+    <ng-container *ngFor="let text of block.dutch">
+      <div>
+        {{text}}
+      </div>
+    </ng-container>
+  </ng-template>
+</ng-container>

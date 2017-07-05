@@ -1,12 +1,29 @@
-<p>{{loaded$ | async}}</p>
+<div class = "loading" *ngIf="(loaded$ | async) === 'loading' || (loaded$ | async) === 'empty'">
+  loading...
+</div>
 
-<ng-container *ngIf="shop">
-  <h1>{{shop.shop_name}} on Etsy</h1>
+<ng-container *ngIf="shop && (loaded$ | async) ==='loaded'">
+  <h1>
+    {{shop.shop_name}}
+    <ng-container [ngSwitch]="(currentLanguage$ | async)">
+      <ng-template ngSwitchCase="english">
+        on Etsy
+      </ng-template>
+
+      <ng-template ngSwitchCase="dutch">
+        Dutch Etsy
+      </ng-template>
+    </ng-container>
+  </h1>
+  <div class = "sectionsContainer">
   
-  <div *ngFor="let section of (sections$ | async)" class = "section">
-    
-    <ng-container *ngIf="section.active_listing_count > 0">
-      <app-etsy-section [section]="section"></app-etsy-section>
+    <ng-container *ngFor="let section of (sections$ | async)" >
+      
+      <ng-container *ngIf="section.active_listing_count > 0">
+        <app-etsy-section [section]="section"></app-etsy-section>
+      </ng-container>
+      
     </ng-container>
   </div>
 </ng-container>
+

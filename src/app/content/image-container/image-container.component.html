@@ -1,0 +1,14 @@
+<div class="imageContainer">
+  <div [ngClass]="{'imageLeft': block.image_side === 'left','imageRight': block.image_side === 'right', 'imageCenter': block.image_side === 'center'}">
+    
+    <ng-container *ngIf="block.link_url; then thenBlock else elseBlock"></ng-container>
+    <ng-template #thenBlock>
+        <a [href] = "block.link_url" target="_blank">  <img [src]="block.image_url"/> </a>
+    </ng-template>
+
+    <ng-template #elseBlock>
+      <img [src]="block.image_url"/>
+    </ng-template>
+
+  </div>
+</div>

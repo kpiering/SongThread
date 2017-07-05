@@ -1,0 +1,30 @@
+<div class="imageTextContainer">
+ 
+  <ng-container *ngIf="block.link_url; then thenBlock else elseBlock"></ng-container>
+  <ng-template #thenBlock>
+    <a [href] = "block.link_url" target="_blank">  <img [src]="block.image_url" [ngClass]="{'imageLeft': block.image_side === 'left','imageRight': block.image_side === 'right'}"/> </a>
+  </ng-template>
+
+  <ng-template #elseBlock>
+    <img [src]="block.image_url" [ngClass]="{'imageLeft': block.image_side === 'left','imageRight': block.image_side === 'right'}"/>
+  </ng-template>
+
+  <ng-container [ngSwitch]="(currentLanguage$ | async)">
+    <ng-template ngSwitchCase="english">
+      <ng-container *ngFor="let text of block.english">
+        <div>
+          {{text}}
+        </div>
+      </ng-container>
+    </ng-template>
+
+    <ng-template ngSwitchCase="dutch">
+      <ng-container *ngFor="let text of block.dutch">
+        <div>
+          {{text}}
+        </div>
+      </ng-container>
+    </ng-template>
+  </ng-container>
+
+</div>

@@ -16,7 +16,9 @@ export class ShopComponent implements OnInit {
 
   listings: Observable<EtsyListing[]>;
   shop: Observable<EtsyShop>;
-  constructor(private etsyService: EtsyService, private store: Store<AppState>) { }
+  constructor(
+    private etsyService: EtsyService, 
+    private store: Store<AppState>) { }
 
    ngOnInit() {
     //this.listings = this.etsy.listings;

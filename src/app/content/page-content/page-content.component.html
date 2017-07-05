@@ -1,0 +1,36 @@
+<div class="pageContent">
+  <ng-container *ngFor="let block of pageBlocks">
+      
+    <ng-container [ngSwitch]="block.type">
+      <ng-template ngSwitchCase="header">
+        <app-header-container [block]="block"></app-header-container>
+      </ng-template>
+
+      <ng-template ngSwitchCase="subheader">
+        <app-subheader-container [block]="block"></app-subheader-container>
+      </ng-template>
+
+      <ng-template ngSwitchCase="image-text">
+        <app-image-text-container [block]="block"></app-image-text-container>
+      </ng-template>
+
+      <ng-template ngSwitchCase="text">
+        <app-text-container [block]="block"></app-text-container>
+      </ng-template>
+
+      <ng-template ngSwitchCase="text-link">
+        <app-text-link-container [block]="block"></app-text-link-container>
+      </ng-template>
+
+      <ng-template ngSwitchCase="image-text-link">
+        <app-image-text-link-container [block]="block"></app-image-text-link-container>
+      </ng-template>
+
+      <ng-template ngSwitchCase="image">
+        <app-image-container [block]="block"></app-image-container>
+      </ng-template>
+
+    </ng-container>
+  
+  </ng-container>
+</div>

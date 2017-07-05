@@ -1,0 +1,12 @@
+.textLinkContainer{
+    width:100%;
+}
+
+a{
+    text-decoration: none;
+    color: #00659d;
+}
+
+a:hover{
+    text-decoration: underline;
+}

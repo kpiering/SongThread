@@ -1,0 +1,9 @@
+<ng-container [ngSwitch]="(currentLanguage$ | async)">
+  <ng-template ngSwitchCase="english">
+    <h3 [style.text-align] = "block.align">{{block.english}}</h3> 
+  </ng-template>
+
+  <ng-template ngSwitchCase="dutch">
+      <h3 [style.text-align] = "block.align">{{block.dutch}}</h3>
+  </ng-template>
+</ng-container>

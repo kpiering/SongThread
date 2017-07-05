@@ -3,20 +3,40 @@ img {
     padding: 5px 5px 5px 5px;
 }
 .title{
-    height: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 180px;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:14px;
 }
 .listing{
-    width: 300px;
-    float:left;
-    margin: 10px 10px 10px 10px;
-    background-color: #aaaaaa;
-    padding-bottom:10px;
+    height: 188px;
+    width: 190px;
+    display:inline-block;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom:5px;
+    position: relative;
+    border: 1px #e3e3e3 solid;
+    border-radius: 7px;
 }
 
-@media all and (max-width: 700px) {
+a{
+    text-decoration: none;
+    color: #00659d;
+}
+
+.listing:hover{
+    border-color: #00659d;
+}
+
+/*@media all and (max-width: 700px) {
     .listing {
         float: none;
         width: 90%;
         margin: 10px auto;
     }
-}
+}*/

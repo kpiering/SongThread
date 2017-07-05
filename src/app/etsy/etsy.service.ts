@@ -70,7 +70,7 @@ export class EtsyService {
           sections[section.shop_section_id] = {
             ...section,
             listingIds: [],
-            rowLimit: 4, //Change to constant or pull in from elsewhere
+            rowLimit: EtsyActions.ETSY_COUNT_START,
           };
         });
 
@@ -87,14 +87,3 @@ export class EtsyService {
   }
 
 }
-
-/*sections {
-  ids: [ 'section1']
-  section1: {..., listings[a, b, c]}
-  section2: [d, e, f]
-}
-listings {
-  ids: [a, b, c, d ,e f],
-  a: {},
-  b: {}
-}*/

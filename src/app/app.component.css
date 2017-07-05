@@ -1,8 +1,9 @@
-.menu{
+.menu {
     min-width: 960px;
     text-align:center;
     margin-right:auto;
     margin-left:auto;
+    margin-top:0px;
     margin-bottom: 0px;
     width:100%;
     font-family: 'News Cycle', sans-serif;
@@ -12,13 +13,13 @@
     background-position: center top; 
 }
 
-.menuSide{
+.menuSide {
     display:inline-block;
     vertical-align: middle;
     
 }
 
-nav{
+nav {
     position:relative;
     margin-left:auto;
     margin-right:auto;
@@ -26,27 +27,27 @@ nav{
     display:inline-block;
 }
 
-.menu a{
+.menu a {
     text-decoration: none;
     color:white;
     margin-right: 8px;
     margin-left: 8px;
 }
 
-.menu a:hover{
+.menu a:hover {
     text-decoration: underline;
 }
 
-.logoImage{
+.logoImage {
     display:inline-block; 
     vertical-align: middle;
 }
 
-.menuRibbon{
+.menuRibbon {
     height:42px;
     padding-top:5px;
     padding-bottom: 5px;
-    background-color:#064F63;
+    background-color: #005289;
     width:100%;
     margin-left:auto;
     margin-right: auto;
@@ -54,14 +55,15 @@ nav{
     margin-bottom: 146px;
     min-width: 960px;
 }
-.menuRibbonInner{
+.menuRibbonInner {
     height:40px;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
-    background-color:#064F63;
+    background-color:#00659d;
     width:100%;
     margin-left:auto;
     margin-right: auto;
+    margin-top:0px;
 }
 
 .arrow-right {
@@ -69,30 +71,73 @@ nav{
     height: 0; 
     border-top: 26px solid transparent;
     border-bottom: 26px solid transparent;
-
     border-left: 26px solid white;
     float:left;
     margin-top: -5px;
 }
 
-.arrow-left{
+.arrow-left {
     width: 0; 
     height: 0; 
     border-top: 26px solid transparent;
     border-bottom: 26px solid transparent; 
-
     border-right:26px solid white;
     float:right;
     margin-top: -5px;
 }
 
-.content{
+.footer {
+    border-top: 1px dashed #005289;
+    text-align:center;
+    padding-top:20px;
+    padding-bottom: 20px;
     min-width:960px;
     max-width:1200px;
-    margin-left:auto;
-    margin-right: auto;
-    background-color:lightblue;
-    text-align: left;
+    margin-right:auto;
+    margin-left: auto;
 }
 
+.footer a {
+    text-decoration: none;
+    padding-left:10px;
+    padding-right:10px;
+    color: #005289; 
+}
 
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.buttonBox {
+    position: absolute;
+    right:5px;
+    top:5px;
+}
+.buttonBox button {
+    background-color: transparent;
+    color: #00659d;
+    border: none;    
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin:0px;
+}
+
+.buttonBox button:focus {
+    outline:0;
+}
+
+.buttonBox .selected {
+    background-color: #00659d;
+    color: white;
+    border: none;  
+}
+
+.buttonBox .unselected {
+    background-color: transparent;
+    color: #00659d;
+    border: none;  
+}

@@ -1,1 +1,7 @@
-<h1>About</h1>
+<div class = "loading" *ngIf="(loaded$ | async) === 'loading' || (loaded$ | async) === 'empty'">
+  loading...
+</div>
+
+<ng-container *ngIf="(loaded$ | async) === 'loaded' && (page$ | async)">
+  <app-page-content [pageBlocks] = "(page$ | async).blocks"></app-page-content>
+</ng-container>

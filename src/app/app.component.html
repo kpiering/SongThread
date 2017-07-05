@@ -1,22 +1,49 @@
 
-<div class = "menu">
-  <nav>
-    <div class = "menuSide">
-      <a routerLink="/" routerLinkActive="active">Home</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-      <a routerLink="/" routerLinkActive="active">Freebies</a>
-    </div>
-
-    <a routerLink="/" routerLinkActive="active" class = "logoImage"> <img src="./assets/_images/logo-teal.svg" /> </a>
-
-  <div class = "menuSide">
-    <a routerLink="/shop" routerLinkActive="active">Shop</a>
-    <a routerLink="/" routerLinkActive="active">Commissions</a>
-    <a routerLink="/" routerLinkActive="active">Links</a>
-  </div>
-  </nav>
+<div class = "buttonBox">
+  <button [class] = "(currentLanguage$ | async) === 'english' ? 'selected' : 'unselected'" (click)="changeToEnglish()">English</button>
+  <button [class] = "(currentLanguage$ | async) === 'dutch' ? 'selected' : 'unselected'" (click)="changeToDutch()">Dutch</button>
 </div>
 
+<div class = "menu">
+  
+  <nav>
+
+    <ng-container [ngSwitch]="(currentLanguage$ | async)">
+      <ng-template ngSwitchCase="english">
+        <div class = "menuSide">
+          <a routerLink="/" routerLinkActive="active">Home</a>
+          <a routerLink="/about" routerLinkActive="active">About</a>
+          <a routerLink="/freebies" routerLinkActive="active">Freebies</a>
+        </div>
+
+        <a routerLink="/" routerLinkActive="active" class = "logoImage"> <img src="./assets/_images/logo-blue.png" /> </a>
+
+        <div class = "menuSide">
+          <a routerLink="/shop" routerLinkActive="active">Shop</a>
+          <a routerLink="/commissions" routerLinkActive="active">Commissions</a>
+          <a routerLink="/links" routerLinkActive="active">Links</a>
+        </div>
+    </ng-template>
+
+    <ng-template ngSwitchCase="dutch">
+      <div class = "menuSide">
+          <a routerLink="/" routerLinkActive="active">Home</a>
+          <a routerLink="/about" routerLinkActive="active">Over Ons</a>
+          <a routerLink="/freebies" routerLinkActive="active">Gratis</a>
+        </div>
+
+        <a routerLink="/" routerLinkActive="active" class = "logoImage"> <img src="./assets/_images/logo-blue.png" /> </a>
+
+        <div class = "menuSide">
+          <a routerLink="/shop" routerLinkActive="active">Winkel</a>
+          <a routerLink="/commissions" routerLinkActive="active">Werk Op Maat</a>
+          <a routerLink="/links" routerLinkActive="active">Links</a>
+        </div>
+    </ng-template>
+  </ng-container>
+
+  </nav>
+</div>
 
 <div class = "menuRibbon"><div class="arrow-right"></div><div class="arrow-left"></div><div class = "menuRibbonInner"></div></div>
 
@@ -24,3 +51,39 @@
   <router-outlet></router-outlet>
 </div>
 
+<ng-container [ngSwitch]="(currentLanguage$ | async)">
+  <ng-template ngSwitchCase="english">
+    <div class = "footer">
+      <nav>
+        <a routerLink="/" routerLinkActive="active">Home</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a routerLink="/freebies" routerLinkActive="active">Freebies</a>
+        <a routerLink="/shop" routerLinkActive="active">Shop</a>
+        <a routerLink="/commissions" routerLinkActive="active">Commissions</a>
+        <a routerLink="/links" routerLinkActive="active">Links</a>
+      </nav>
+
+      <div>
+        All content	&copy; to Nathalie Robrechts of Song Thread. Blah blah something else
+      </div>
+    </div>    
+  </ng-template>
+
+  <ng-template ngSwitchCase="dutch">
+    <div class = "footer">
+      <nav>
+        <a routerLink="/" routerLinkActive="active">Home</a>
+        <a routerLink="/about" routerLinkActive="active">Over Ons</a>
+        <a routerLink="/freebies" routerLinkActive="active">Gratis</a>
+        <a routerLink="/shop" routerLinkActive="active">Winkel</a>
+        <a routerLink="/commissions" routerLinkActive="active">Werk Op Maat</a>
+        <a routerLink="/links" routerLinkActive="active">Links</a>
+          
+      </nav>
+
+      <div>
+        All content	&copy; to Nathalie Robrechts of Song Thread. This is suppose to be dutch
+      </div>
+    </div>
+  </ng-template>
+</ng-container>
