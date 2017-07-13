@@ -2,6 +2,12 @@ html{
    font-family: Verdana, Geneva, Tahoma, sans-serif; 
    padding:0px;
    margin: 0px;
+   font-size:16px;
+}
+
+div, p, figure {
+    padding:0px;
+    margin:0px;
 }
 
 .content{
@@ -14,15 +20,18 @@ html{
 }
 
 .content div{
-    margin-top:10px;
-    margin-bottom:10px;
-    
+    line-height: 1.5;
 }
+
+img{
+    line-height: 0px;
+}
+
 
 .pageContent{
     float:left;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
 }
 
 h1{
@@ -32,16 +41,38 @@ h1{
     padding:0px;
     margin: 0px;
     color: #00659d;
+
 }
 
 h3{
-    margin: 20px 0px 0 0px;
+    font-family: 'News Cycle', sans-serif;
+    margin: 24px 0px 24px 0px;
     padding: 0px;
-    font-size:20px;
+    font-size:24px;
     color: #005289;
+}
+
+.imageTextContainer{
+    width:100%;
+    float:left;
 }
 
 .loading{
     text-align:center;
     font-size: 22px;
 }
+
+.textContainer p {
+    padding-bottom: 24px;
+}
+
+.textContainer a:hover{
+    text-decoration: underline;
+}
+
+.textContainer a {
+    color: #00659d;
+    text-decoration: none;
+}
+
+

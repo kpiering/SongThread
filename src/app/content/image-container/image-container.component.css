@@ -1,20 +1,11 @@
-.imageContainer{
-    width:100%;
-    float:left;
-}
-
-.imageContainer img{
-    vertical-align: middle;   
-}
-
 .imageLeft{
     float:left;
-    margin-right:20px; 
+    margin-right:24px; 
 }
 
 .imageRight{
     float:right;
-    margin-left:20px;
+    margin-left:24px;
  
 }
 
@@ -27,10 +18,10 @@
 
 img{
     vertical-align: middle;  
-    border: 5px solid transparent;
+    border: 4px solid transparent;
 }
 
 a img:hover{
     text-decoration: none;
-    border: 5px solid #00659d;
+    border: 4px solid #00659d;
 }

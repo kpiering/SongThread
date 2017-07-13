@@ -60,7 +60,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     ReduxModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
   ],
   providers: [
     EtsyService,

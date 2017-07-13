@@ -1,15 +1,15 @@
 h3{
     text-align: center;
-    margin-bottom:20px;
+    margin-bottom:24px;
 }
 
 .section{
    
     background:white;
     width:100%;
-    margin-bottom:10px;
+    margin-bottom:72px;
     border-bottom: 1px #e3e3e3 solid;    
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .listingsContainer{
@@ -31,7 +31,7 @@ button{
     background-color: #00659d;
     color: white;
     border: none;    
-    padding: 5px;
+    padding: 6px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;

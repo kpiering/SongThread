@@ -20,9 +20,4 @@ export class PageContentComponent implements OnInit {
   ngOnInit() { 
     this.currentLanguage$ = this.store.select<string>(content.currentLanguage);
   }
-
-  test(thing:any){
-    console.log(thing);
-  }
-
 }

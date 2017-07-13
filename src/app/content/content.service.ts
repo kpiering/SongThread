@@ -27,7 +27,6 @@ export class ContentService {
     const state: AppState = SyncStore.getState(this.store);
 
    if (state.content.loaded === 'empty') {
-      console.log('get page');
       const params: URLSearchParams = new URLSearchParams();
       this.store.dispatch(PageContentActions.loadBegin());
       const requestOptions: RequestOptions = new RequestOptions({
@@ -36,7 +35,7 @@ export class ContentService {
       this.http.get(this.getPagesUrl, requestOptions).subscribe((res) => {
         const data: any = res.json();
         this.pagesSubject.next(data.results[0]);
-        console.log(data.results[0]);
+        //console.log(data.results[0]);
         this.store.dispatch(PageContentActions.loadComplete(data.results[0]));
       });
     }

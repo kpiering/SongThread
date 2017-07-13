@@ -89,8 +89,8 @@ nav {
 .footer {
     border-top: 1px dashed #005289;
     text-align:center;
-    padding-top:20px;
-    padding-bottom: 20px;
+    padding-top:24px;
+    padding-bottom: 24px;
     min-width:960px;
     max-width:1200px;
     margin-right:auto;
@@ -99,9 +99,13 @@ nav {
 
 .footer a {
     text-decoration: none;
-    padding-left:10px;
-    padding-right:10px;
+    padding-left:12px;
+    padding-right:12px;
     color: #005289; 
+}
+.footer div {
+    margin-top: 24px;
+    line-height: 1.5;
 }
 
 .footer a:hover {

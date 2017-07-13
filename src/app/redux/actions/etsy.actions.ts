@@ -21,7 +21,7 @@ export class EtsyActions {
     static ETSY_LOAD_COMPLETE = 'ETSY_LOAD_COMPLETE';
     static ETSY_SHOW_MORE = 'ETSY_SHOW_MORE';
 
-    static ETSY_COUNT_START = 6;
+    static ETSY_COUNT_START = 12;
     static ETSY_COUNT_INCREASE = 12;
     static loadBegin(): Action {
         return {

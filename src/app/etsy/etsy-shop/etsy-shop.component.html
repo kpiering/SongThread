@@ -4,14 +4,14 @@
 
 <ng-container *ngIf="shop && (loaded$ | async) ==='loaded'">
   <h1>
-    {{shop.shop_name}}
+    
     <ng-container [ngSwitch]="(currentLanguage$ | async)">
       <ng-template ngSwitchCase="english">
-        on Etsy
+       {{shop.shop_name}}’s Shop on Etsy
       </ng-template>
 
       <ng-template ngSwitchCase="dutch">
-        Dutch Etsy
+        {{shop.shop_name}}’s winkel op Etsy
       </ng-template>
     </ng-container>
   </h1>

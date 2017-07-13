@@ -54,7 +54,6 @@ export class EtsyService {
     const state: AppState = SyncStore.getState(this.store);
 
     if (state.etsy.loaded === 'empty') {
-      console.log('get shop');
       const params: URLSearchParams = new URLSearchParams();
       this.store.dispatch(EtsyActions.loadBegin());
       const requestOptions: RequestOptions = new RequestOptions({
@@ -79,7 +78,7 @@ export class EtsyService {
         });
         
         //console.log(sections);
-        console.log(data.results[0]);
+        //console.log(data.results[0]);
         this.store.dispatch(EtsyActions.loadComplete(data.results[0], sections));
         
       });
