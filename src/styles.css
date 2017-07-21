@@ -41,6 +41,7 @@ h1{
     padding:0px;
     margin: 0px;
     color: #00659d;
+    margin-bottom: 24px;
 
 }
 
@@ -55,6 +56,7 @@ h3{
 .imageTextContainer{
     width:100%;
     float:left;
+    padding-bottom: 24px;
 }
 
 .loading{
@@ -73,6 +75,10 @@ h3{
 .textContainer a {
     color: #00659d;
     text-decoration: none;
+}
+
+.imageContainer{
+    padding-bottom: 24px;
 }
 
 

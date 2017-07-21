@@ -12,22 +12,22 @@
     
   </div>
   <div class = "textContainer">
-  <ng-container [ngSwitch]="(currentLanguage$ | async)">
-    <ng-template ngSwitchCase="english">
-      <ng-container *ngFor="let text of block.english">
-        <p>
-          {{text}}
-        </p>
-      </ng-container>
-    </ng-template>
+    <ng-container [ngSwitch]="(currentLanguage$ | async)">
+      <ng-template ngSwitchCase="english">
+        <ng-container *ngFor="let text of block.english">
+          <p>
+            {{text}}
+          </p>
+        </ng-container>
+      </ng-template>
 
-    <ng-template ngSwitchCase="dutch">
-      <ng-container *ngFor="let text of block.dutch">
-        <p>
-          {{text}}
-        </p>
-      </ng-container>
-    </ng-template>
-  </ng-container>
-</div>
+      <ng-template ngSwitchCase="dutch">
+        <ng-container *ngFor="let text of block.dutch">
+          <p>
+            {{text}}
+          </p>
+        </ng-container>
+      </ng-template>
+    </ng-container>
+  </div>
 </div>

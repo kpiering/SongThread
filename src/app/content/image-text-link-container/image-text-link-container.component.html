@@ -1,28 +1,17 @@
 <div class="imageTextContainer">
-  <div [ngClass]="{'left': block.align === 'left','right': block.align === 'right'}">
-   
-    
-      <ng-container *ngIf="block.link_url; then thenBlock else elseBlock"></ng-container>
-      <ng-template #thenBlock>
-          <a [href] = "block.link_url" target="_blank">  <img [src]="block.image_url" /> </a>
-      </ng-template>
-
-      <ng-template #elseBlock>
-        <img [src]="block.image_url" />
-      </ng-template>
-    
-    <div class = "textContainer">
-      <ng-container [ngSwitch]="(currentLanguage$ | async)">
-          <ng-template ngSwitchCase="english">
-            <a [href] = "block.link_url" target = "blank"> {{block.english}} </a>
-          </ng-template>
-
-          <ng-template ngSwitchCase="dutch">
-            <a [href] = "block.link_url" target = "blank"> {{block.dutch}} </a>
-          </ng-template>
-
-        </ng-container>
-      </div>
+  <div class = "imageContainer">
+    <a [href] = "block.link_url" target="_blank">  <img [src]="block.image_url" [ngClass]="{'imageLeft': block.image_side === 'left','imageRight': block.image_side === 'right'}"/> </a>
     
   </div>
+  <div class = "textLinkContainer">
+      <ng-container [ngSwitch]="(currentLanguage$ | async)">
+        <ng-template ngSwitchCase="english">
+          <a [href] = "block.link_url" target = "blank"> {{block.english}} </a>
+        </ng-template>
+
+        <ng-template ngSwitchCase="dutch">
+          <a [href] = "block.link_url" target = "blank"> {{block.dutch}} </a>
+        </ng-template>
+      </ng-container>
+    </div>
 </div>

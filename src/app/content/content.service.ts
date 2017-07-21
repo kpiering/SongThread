@@ -11,7 +11,7 @@ import { PageContentActions } from "app/redux/actions/page-content.actions";
 @Injectable()
 export class ContentService {
 
-  getPagesUrl = 'http://cutekick.com/cache/content.json';
+  getPagesUrl = 'http://www.songthread.com/cache/content.json';
   pages: Observable<PageContent[]>;
   private pagesSubject: Subject<PageContent[]>;
   

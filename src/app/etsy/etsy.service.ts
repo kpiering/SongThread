@@ -17,7 +17,7 @@ export class EtsyService {
   listings: Observable<EtsyListing[]>;
   private listingSubject: Subject<EtsyListing[]>;*/
 
-  getShopUrl = 'http://cutekick.com/cache/etsy.json';
+  getShopUrl = 'http://www.songthread.com/cache/etsy.json';
   shop: Observable<EtsyShop>;
   private shopSubject: Subject<EtsyShop>;
   
